@@ -1,0 +1,112 @@
+/* general */
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+.flow > *:where(:not(:last-child)) {
+  margin-bottom: var(--flow-space, 1rem);
+  // outline: 1px solid red;
+}
+
+.container {
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 2em;
+}
+
+// To hide information intended only for screen readers
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+/* colors */
+.bg-dark {
+  background-color: $color-dark;
+}
+.bg-accent {
+  background-color: $color-light;
+}
+.bg-white {
+  background-color: $color-white;
+}
+
+.text-dark {
+  color: $color-dark;
+}
+.text-accent {
+  color: $color-light;
+}
+.text-white {
+  color: $color-white;
+}
+
+/* typography */
+.ff-serif {
+  font-family: $ff-serif;
+}
+.ff-sans-cond {
+  font-family: $ff-sans-cond;
+}
+.ff-sans-normal {
+  font-family: $ff-sans-normal;
+}
+
+.ls-1 {
+  letter-spacing: 4.75px;
+}
+.ls-2 {
+  letter-spacing: 2.7px;
+}
+.ls-3 {
+  letter-spacing: 2.35px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.fs-9 {
+  font-size: $fs-900;
+}
+.fs-8 {
+  font-size: $fs-800;
+}
+.fs-7 {
+  font-size: $fs-700;
+}
+.fs-6 {
+  font-size: $fs-600;
+}
+.fs-5 {
+  font-size: $fs-500;
+}
+.fs-4 {
+  font-size: $fs-400;
+}
+.fs-3 {
+  font-size: $fs-300;
+}
+.fs-2 {
+  font-size: $fs-200;
+}
+
+.fs-9,
+.fs-8,
+.fs-7,
+.fs-6 {
+  line-height: 1.1;
+}
