@@ -1,5 +1,7 @@
 <template>
-  <a href="#" class="large-button">Explore</a>
+  <a href="#" class="large-button uppercase ff-serif text-dark bg-accent"
+    >Explore</a
+  >
 </template>
 
 <script>
@@ -9,12 +11,17 @@ export default {};
 <style lang="scss" scoped>
 .large-button {
   position: relative;
-  padding: 0 2em;
+  padding-inline: 2em;
+  font-size: 2rem;
   display: inline-grid;
   place-items: center;
   border-radius: 50%;
   aspect-ratio: 1;
   z-index: 1;
+
+  @include respond(tab) {
+    font-size: 3.2rem;
+  }
 
   &::after {
     content: "";

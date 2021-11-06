@@ -1,5 +1,19 @@
 <template>
-  <Navigation />
+  <header class="header flex">
+    <div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+        <g fill="none" fill-rule="evenodd">
+          <circle cx="24" cy="24" r="24" fill="#FFF" />
+          <path
+            fill="#0B0D17"
+            d="M24 0c0 16-8 24-24 24 15.718.114 23.718 8.114 24 24 0-16 8-24 24-24-16 0-24-8-24-24z"
+          />
+        </g>
+      </svg>
+    </div>
+    <button v-if="mobileView"><span class="sr-only">Menu</span></button>
+    <!-- <Navigation /> -->
+  </header>
 
   <!-- Tabs -->
   <!-- <div class="tabs underline flex">
@@ -43,13 +57,25 @@ import Navigation from "@/components/Navigation.vue";
 
 export default {
   components: { Navigation },
+  methods: {
+    handleView() {
+      this.mobileView = window.innerWidth <= 576;
+    },
+  },
 };
 </script>
 
 <style lang="scss">
+.header {
+  position: fixed;
+  width: 100%;
+  justify-content: space-between;
+  z-index: 100;
+}
+/////////////////////////////////
 .underline {
   a {
-    padding: var(--underline-gap, 1rem) 0;
+    // padding: var(--underline-gap, 1rem) 0;
     border-bottom: 0.2rem solid rgba($color-white, 0);
 
     &:hover,
@@ -65,8 +91,8 @@ export default {
 }
 
 .navigation {
-  --gap: 8rem;
-  --underline-gap: 2rem;
+  // --gap: 8rem;
+  // --underline-gap: 2rem;
 
   span {
     font-weight: 700;
@@ -75,7 +101,7 @@ export default {
 }
 
 .tabs {
-  --gap: 2rem;
+  // --gap: 2rem;
 
   span {
     display: none;
@@ -103,7 +129,7 @@ export default {
 // numbers
 .numbers {
   flex-direction: column;
-  --gap: 3rem;
+  // --gap: 3rem;
 
   a {
     display: inline-grid;

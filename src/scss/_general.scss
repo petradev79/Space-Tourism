@@ -4,9 +4,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
 }
 
 html {
@@ -14,12 +11,19 @@ html {
 }
 
 body {
-  min-height: 100vh;
   font-family: $ff-sans-normal;
-  font-size: $fs-400;
+  font-size: 1.5rem;
   line-height: 1.5;
   color: $color-white;
   background-color: $color-dark;
+
+  @include respond(tab) {
+    font-size: 1.6rem;
+  }
+
+  @include respond(lap) {
+    font-size: 1.8rem;
+  }
 }
 
 h1,
