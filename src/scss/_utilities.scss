@@ -1,6 +1,7 @@
 /* general */
 .flex {
   display: flex;
+  gap: var(--gap-space, 1.6rem);
 }
 
 .grid {
@@ -13,10 +14,6 @@
 
 .flow > *:where(:not(:last-child)) {
   margin-bottom: var(--flow-space, 1.6rem);
-
-  // @include respond(tab) {
-  //   margin-bottom: var(--flow-space, 2.4rem);
-  // }
 }
 
 .grid-container {
@@ -35,7 +32,6 @@
   }
 
   @include respond(lap) {
-    // column-gap: 3rem;
     grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 64rem)) minmax(
         2rem,
         1fr

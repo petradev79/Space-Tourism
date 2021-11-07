@@ -1,5 +1,5 @@
 <template>
-  <div class="home grid-container">
+  <main class="home grid-container">
     <div>
       <h1 class="text-accent ff-sans-cond uppercase ls-1">
         So, you want to travel to
@@ -15,7 +15,7 @@
     <div>
       <LargeButton />
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -44,7 +44,6 @@ export default {
 
   h1 {
     font-size: 1.6rem;
-    // margin-bottom: 1.6rem;
 
     @include respond(tab) {
       font-size: 2rem;
@@ -55,11 +54,12 @@ export default {
     }
 
     span {
+      margin-block: 1.6rem;
       font-size: clamp(8rem, 10vw + 1rem, 15rem);
       line-height: 1.1;
-      // margin-top: 1.6rem;
 
       @include respond(tab) {
+        margin-block: 2.4rem;
         font-size: 15rem;
       }
     }
