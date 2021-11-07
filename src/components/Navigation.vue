@@ -122,6 +122,7 @@ export default {
     z-index: 1000;
     background: transparent;
     border: 0;
+    outline: none;
     transition: transform 0.5s ease;
   }
 
