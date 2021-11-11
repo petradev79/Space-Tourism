@@ -29,9 +29,11 @@ export default {
 
 <style lang="scss" scoped>
 .home {
+  padding-top: 11.2rem;
   background-image: url("~@/assets/home/background-home-mobile.jpg");
 
   @include respond(tab) {
+    padding-top: 20rem;
     background-position: center center;
     background-image: url("~@/assets/home/background-home-tablet.jpg");
   }
@@ -40,6 +42,18 @@ export default {
     padding-bottom: max(13rem, 20vh);
     align-items: end;
     background-image: url("~@/assets/home/background-home-desktop.jpg");
+  }
+
+  & > *:first-child {
+    @include respond(lap) {
+      grid-column: 2;
+    }
+  }
+
+  & > *:last-child {
+    @include respond(lap) {
+      grid-column: 3;
+    }
   }
 
   h1 {

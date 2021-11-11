@@ -1,18 +1,6 @@
 <template>
   <Navigation />
 
-  <!-- Tabs -->
-  <!-- <div class="tabs underline flex">
-    <router-link to="/" class="uppercase ff-sans-cond text-accent ls-2"
-      ><span>01</span>Home</router-link
-    >
-    <router-link to="/about" class="uppercase ff-sans-cond text-accent ls-2"
-      ><span>02</span>About</router-link
-    >
-    <router-link to="/about" class="uppercase ff-sans-cond text-accent ls-2"
-      ><span>03</span>Hover</router-link
-    >
-  </div> -->
   <!-- Dots -->
   <!-- <div class="dots flex">
     <router-link to="/">
@@ -35,7 +23,12 @@
       ><span class="ff-serif fs-6 ls-2">3</span></router-link
     >
   </div> -->
-  <router-view />
+  <!-- <router-view :key="$route.path" /> -->
+  <router-view v-slot="{ Component }">
+    <transition name="fade" mode="out-in">
+      <component :is="Component" :key="$route.path"></component>
+    </transition>
+  </router-view>
 </template>
 
 <script>
@@ -47,41 +40,15 @@ export default {
 </script>
 
 <style lang="scss">
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
 /////////////////////////////////
-.underline {
-  a {
-    // padding: var(--underline-gap, 1rem) 0;
-    border-bottom: 0.2rem solid rgba($color-white, 0);
-
-    &:hover,
-    &:focus {
-      border-color: rgba($color-white, 0.25);
-    }
-
-    &.router-link-exact-active {
-      border-color: rgba($color-white, 1);
-      color: $color-white;
-    }
-  }
-}
-
-.navigation {
-  // --gap: 8rem;
-  // --underline-gap: 2rem;
-
-  span {
-    font-weight: 700;
-    margin-right: 0.5em;
-  }
-}
-
-.tabs {
-  // --gap: 2rem;
-
-  span {
-    display: none;
-  }
-}
 
 // dots
 .dots {

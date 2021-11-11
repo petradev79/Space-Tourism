@@ -6,6 +6,7 @@
 
 .grid {
   display: grid;
+  gap: var(--gap-space, 1.6rem);
 }
 
 .block {
@@ -20,11 +21,16 @@
   min-height: 100vh;
   padding-inline: 2.4rem;
   padding-top: 8.8rem;
+  padding-bottom: 4rem;
   display: grid;
   text-align: center;
   place-items: center;
   background-size: cover;
   background-position: bottom center;
+
+  @include respond(tab) {
+    padding-top: 13.6rem;
+  }
 
   p {
     max-width: 45ch;
@@ -37,18 +43,6 @@
         1fr
       );
     text-align: left;
-  }
-}
-
-.grid-container > *:first-child {
-  @include respond(lap) {
-    grid-column: 2;
-  }
-}
-
-.grid-container > *:last-child {
-  @include respond(lap) {
-    grid-column: 3;
   }
 }
 

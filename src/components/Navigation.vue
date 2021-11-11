@@ -1,16 +1,6 @@
 <template>
   <header class="header flex">
-    <div class="header__logo">
-      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48">
-        <g fill="none" fill-rule="evenodd">
-          <circle cx="24" cy="24" r="24" fill="#FFF" />
-          <path
-            fill="#0B0D17"
-            d="M24 0c0 16-8 24-24 24 15.718.114 23.718 8.114 24 24 0-16 8-24 24-24-16 0-24-8-24-24z"
-          />
-        </g>
-      </svg>
-    </div>
+    <img class="header__logo" src="@/assets/shared/logo.svg" alt="" />
     <button
       class="header__nav-icon"
       :class="{ 'icon-rotate': isNavOpen }"
@@ -32,16 +22,25 @@
 
     <transition name="slide">
       <nav class="mobile-nav flex flow" v-show="isNavOpen">
-        <router-link to="/" class="uppercase text-white ls-2"
+        <router-link to="/" class="uppercase text-white ls-2" @click="showNav"
           ><span aria-hidden="true">00</span>Home</router-link
         >
-        <router-link to="/destination" class="uppercase text-white ls-2"
+        <router-link
+          :to="{ name: 'destination', params: { slug: destination.slug } }"
+          class="uppercase text-white ls-2"
+          @click="showNav"
           ><span aria-hidden="true">01</span>Destination</router-link
         >
-        <router-link to="/crew" class="uppercase text-white ls-2"
+        <router-link
+          :to="{ name: 'crew', params: { slug: cre.slug } }"
+          class="uppercase text-white ls-2"
+          @click="showNav"
           ><span aria-hidden="true">02</span>Crew</router-link
         >
-        <router-link to="/technology" class="uppercase text-white ls-2"
+        <router-link
+          :to="{ name: 'technology', params: { slug: technology.slug } }"
+          class="uppercase text-white ls-2"
+          @click="showNav"
           ><span aria-hidden="true">03</span>Technology</router-link
         >
       </nav>
@@ -51,13 +50,22 @@
       <router-link to="/" class="uppercase text-white ls-2"
         ><span aria-hidden="true">00</span>Home</router-link
       >
-      <router-link to="/destination" class="uppercase text-white ls-2"
+      <router-link
+        :to="{ name: 'destination', params: { slug: destination.slug } }"
+        class="uppercase text-white ls-2"
+        :class="{
+          'router-link-exact-active': isActive('destination'),
+        }"
         ><span aria-hidden="true">01</span>Destination</router-link
       >
-      <router-link to="/crew" class="uppercase text-white ls-2"
+      <router-link
+        :to="{ name: 'crew', params: { slug: cre.slug } }"
+        class="uppercase text-white ls-2"
         ><span aria-hidden="true">02</span>Crew</router-link
       >
-      <router-link to="/technology" class="uppercase text-white ls-2"
+      <router-link
+        :to="{ name: 'technology', params: { slug: technology.slug } }"
+        class="uppercase text-white ls-2"
         ><span aria-hidden="true">03</span>Technology</router-link
       >
     </nav>
@@ -65,6 +73,8 @@
 </template>
 
 <script>
+import store from "@/data.json";
+
 export default {
   data() {
     return {
@@ -76,12 +86,26 @@ export default {
     window.addEventListener("resize", this.handleView);
     this.handleView();
   },
+  computed: {
+    destination() {
+      return store.destinations[0];
+    },
+    cre() {
+      return store.crew[0];
+    },
+    technology() {
+      return store.technology[0];
+    },
+  },
   methods: {
     handleView() {
       this.mobileView = window.innerWidth <= 576;
     },
     showNav() {
       this.isNavOpen = !this.isNavOpen;
+    },
+    isActive(path) {
+      return this.$route.path.split("/")[1] === path;
     },
   },
 };
@@ -115,6 +139,14 @@ export default {
       margin-right: -5rem;
       margin-left: 3rem;
       background: rgba($color-white, 0.25);
+    }
+  }
+
+  &__logo {
+    width: 4rem;
+
+    @include respond(tab) {
+      width: 4.8rem;
     }
   }
 
@@ -182,8 +214,8 @@ export default {
   }
 
   a {
-    font-size: 1.4rem;
     padding-block: 3.5rem;
+    font-size: 1.4rem;
     border-bottom: 0.2rem solid rgba($color-white, 0);
 
     @include respond(lap) {

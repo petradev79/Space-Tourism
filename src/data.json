@@ -2,9 +2,10 @@
   "destinations": [
     {
       "name": "Moon",
+      "slug": "moon",
       "images": {
-        "png": "./assets/destination/image-moon.png",
-        "webp": "./assets/destination/image-moon.webp"
+        "png": "image-moon.png",
+        "webp": "image-moon.webp"
       },
       "description": "See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.",
       "distance": "384,400 km",
@@ -12,9 +13,10 @@
     },
     {
       "name": "Mars",
+      "slug": "mars",
       "images": {
-        "png": "./assets/destination/image-mars.png",
-        "webp": "./assets/destination/image-mars.webp"
+        "png": "image-mars.png",
+        "webp": "image-mars.webp"
       },
       "description": "Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It’s two and a half times the size of Everest!",
       "distance": "225 mil. km",
@@ -22,9 +24,10 @@
     },
     {
       "name": "Europa",
+      "slug": "europa",
       "images": {
-        "png": "./assets/destination/image-europa.png",
-        "webp": "./assets/destination/image-europa.webp"
+        "png": "image-europa.png",
+        "webp": "image-europa.webp"
       },
       "description": "The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover’s dream. With an icy surface, it’s perfect for a bit of ice skating, curling, hockey, or simple relaxation in your snug wintery cabin.",
       "distance": "628 mil. km",
@@ -32,9 +35,10 @@
     },
     {
       "name": "Titan",
+      "slug": "titan",
       "images": {
-        "png": "./assets/destination/image-titan.png",
-        "webp": "./assets/destination/image-titan.webp"
+        "png": "image-titan.png",
+        "webp": "image-titan.webp"
       },
       "description": "The only moon known to have a dense atmosphere other than Earth, Titan is a home away from home (just a few hundred degrees colder!). As a bonus, you get striking views of the Rings of Saturn.",
       "distance": "1.6 bil. km",
@@ -44,6 +48,7 @@
   "crew": [
     {
       "name": "Douglas Hurley",
+      "slug": "douglas-hurley",
       "images": {
         "png": "./assets/crew/image-douglas-hurley.png",
         "webp": "./assets/crew/image-douglas-hurley.webp"
@@ -53,6 +58,7 @@
     },
     {
       "name": "Mark Shuttleworth",
+      "slug": "mark-shuttleworth",
       "images": {
         "png": "./assets/crew/image-mark-shuttleworth.png",
         "webp": "./assets/crew/image-mark-shuttleworth.webp"
@@ -62,6 +68,7 @@
     },
     {
       "name": "Victor Glover",
+      "slug": "victor-glover",
       "images": {
         "png": "./assets/crew/image-victor-glover.png",
         "webp": "./assets/crew/image-victor-glover.webp"
@@ -71,6 +78,7 @@
     },
     {
       "name": "Anousheh Ansari",
+      "slug": "anousheh-ansari",
       "images": {
         "png": "./assets/crew/image-anousheh-ansari.png",
         "webp": "./assets/crew/image-anousheh-ansari.webp"
@@ -82,6 +90,7 @@
   "technology": [
     {
       "name": "Launch vehicle",
+      "slug": "launch-vehicle",
       "images": {
         "portrait": "./assets/technology/image-launch-vehicle-portrait.jpg",
         "landscape": "./assets/technology/image-launch-vehicle-landscape.jpg"
@@ -90,6 +99,7 @@
     },
     {
       "name": "Spaceport",
+      "slug": "spaceport",
       "images": {
         "portrait": "./assets/technology/image-spaceport-portrait.jpg",
         "landscape": "./assets/technology/image-spaceport-landscape.jpg"
@@ -98,6 +108,7 @@
     },
     {
       "name": "Space capsule",
+      "slug": "space-capsule",
       "images": {
         "portrait": "./assets/technology/image-space-capsule-portrait.jpg",
         "landscape": "./assets/technology/image-space-capsule-landscape.jpg"
