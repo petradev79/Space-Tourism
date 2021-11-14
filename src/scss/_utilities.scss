@@ -29,12 +29,22 @@
   background-position: bottom center;
 
   @include respond(tab) {
+    padding-inline: 4rem;
     padding-top: 13.6rem;
   }
 
-  p {
+  @include respond(lap) {
+    padding-top: 20rem;
+  }
+
+  p:not([class]) {
     max-width: 45ch;
     margin-inline: auto;
+    line-height: 2.5rem;
+
+    @include respond(tab) {
+      line-height: 2.8rem;
+    }
   }
 
   @include respond(lap) {

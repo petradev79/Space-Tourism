@@ -75,24 +75,18 @@ export default {
   background-image: url("~@/assets/destination/background-destination-mobile.jpg");
 
   @include respond(tab) {
+    --flow-space: 3.2rem;
     background-position: center center;
     background-image: url("~@/assets/destination/background-destination-tablet.jpg");
-  }
-
-  @include respond(lap) {
-    background-image: url("~@/assets/destination/background-destination-desktop.jpg");
-  }
-
-  @include respond(tab) {
-    --flow-space: 3.2rem;
   }
 
   @include respond(lap) {
     align-content: center;
     grid-template-areas:
       ". title title ."
-      ". image tabs ."
+      ". image content ."
       ". image content .";
+    background-image: url("~@/assets/destination/background-destination-desktop.jpg");
   }
 
   &__title {

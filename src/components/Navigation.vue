@@ -32,7 +32,7 @@
           ><span aria-hidden="true">01</span>Destination</router-link
         >
         <router-link
-          :to="{ name: 'crew', params: { slug: cre.slug } }"
+          :to="{ name: 'crew', params: { slug: crew.slug } }"
           class="uppercase text-white ls-2"
           @click="showNav"
           ><span aria-hidden="true">02</span>Crew</router-link
@@ -59,13 +59,19 @@
         ><span aria-hidden="true">01</span>Destination</router-link
       >
       <router-link
-        :to="{ name: 'crew', params: { slug: cre.slug } }"
+        :to="{ name: 'crew', params: { slug: crew.slug } }"
         class="uppercase text-white ls-2"
+        :class="{
+          'router-link-exact-active': isActive('crew'),
+        }"
         ><span aria-hidden="true">02</span>Crew</router-link
       >
       <router-link
         :to="{ name: 'technology', params: { slug: technology.slug } }"
         class="uppercase text-white ls-2"
+        :class="{
+          'router-link-exact-active': isActive('technology'),
+        }"
         ><span aria-hidden="true">03</span>Technology</router-link
       >
     </nav>
@@ -90,7 +96,7 @@ export default {
     destination() {
       return store.destinations[0];
     },
-    cre() {
+    crew() {
       return store.crew[0];
     },
     technology() {

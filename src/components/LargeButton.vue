@@ -1,11 +1,21 @@
 <template>
-  <a href="#" class="large-button uppercase ff-serif text-dark bg-accent"
-    >Explore</a
+  <router-link
+    :to="{ name: 'destination', params: { slug: destination.slug } }"
+    class="large-button uppercase ff-serif text-dark bg-accent"
+    >Explore</router-link
   >
 </template>
 
 <script>
-export default {};
+import store from "@/data.json";
+
+export default {
+  computed: {
+    destination() {
+      return store.destinations[0];
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
