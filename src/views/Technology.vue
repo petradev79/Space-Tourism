@@ -112,8 +112,12 @@ export default {
     }
 
     img {
-      height: 100%;
-      float: right;
+      width: 100%;
+
+      @include respond(lap) {
+        width: auto;
+        float: right;
+      }
     }
   }
 
